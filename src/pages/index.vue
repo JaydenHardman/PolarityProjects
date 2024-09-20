@@ -1,6 +1,6 @@
 <template>
   <div>
-      The Start of something amazing
+      Polarity Projects.
   </div>
 </template>
 

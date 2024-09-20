@@ -45,7 +45,7 @@
 
 
 <script lang="ts">
-//import OpenWindowService from './services/OpenWindowService';
+import ProjectsService from './services/ProjectsService';
 
 export default {
   name: 'App',
@@ -60,7 +60,7 @@ export default {
         {title: '/First Flight', url:'FirstFlight'},
         {title: '/Gaia', url:'Gaia'},
       ],
-      //service : new OpenWindowService(),
+      projectsService : new ProjectsService(),
     }
   },
   methods: {
@@ -76,12 +76,12 @@ export default {
     isActiveProject(title: string): boolean{
       return this.$route.query.hasOwnProperty('project') && this.$route.query.project == title
     },
-    // getProjects() {
-    //   this.service.getProjects()
-    //   .then((response) => {
-    //     this.projects = response.data
-    //   })
-    // }
+    getProjects() {
+      this.projectsService.getProjects()
+      .then((response) => {
+        this.projects = response.data
+      })
+    }
   },
   computed: {
     isProjectsPage() {

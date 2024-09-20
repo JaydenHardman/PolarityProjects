@@ -13,15 +13,25 @@
 </template>
 
 <script lang="ts">
+import ProjectsService from '@/services/ProjectsService';
+
 export default {
     name: 'Projects',
     data() {
         return {
             // Add your component data here
+            projectsService : new ProjectsService(),
+            projects: [],
         };
     },
     methods: {
         // Add your component methods here
+        getProjects() {
+            this.projectsService.getProjects()
+            .then((response) => {
+                this.projects = response.data
+            })
+        }
     },
     computed: {
         isProjectSelected(){
@@ -39,6 +49,7 @@ export default {
     },
     mounted() {
         // Lifecycle hook for when the component is mounted
+        this.getProjects();
     }
 };
 </script>

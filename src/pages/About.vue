@@ -3,10 +3,10 @@
         <div>
             <v-card class="mx-auto" color="#1F2833">
                 <v-card-text>
-                <p class="text-h4 font-weight-black" style="color: #66FCF1;">What is Polarity Development?</p>
+                <p class="text-h4 font-weight-black" style="color: #66FCF1;">What is Polarity Projects?</p>
                 <div class="mt-2">
                     <p style="color: #C5C6C7;">
-                        Polarity Development is a software development company that specializes in creating high impact software. <br/>
+                        Polarity Projects is a software development company that specializes in creating high impact software. <br/>
                         We believe that focusing on high quality software and cutting edge hardware within new and existing business fields <br/>
                         will lead us to build world leading solutions and products.
                     </p>

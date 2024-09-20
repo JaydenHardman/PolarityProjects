@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as n}from"./index-CU3Vupzh.js";const o={name:"index",data(){return{}},methods:{},computed:{},created(){},mounted(){}};function a(r,c,s,d,m,i){return n(),t("div",null," The Start of something amazing ")}const _=e(o,[["render",a]]);export{_ as default};

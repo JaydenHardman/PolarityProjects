@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as s}from"./index-By_exT22.js";const o={name:"Updates",data(){return{updates:[]}},methods:{},computed:{},created(){},mounted(){}},a={class:"d-flex justify-center align-center"};function c(n,r,d,p,_,l){return s(),t("div",a," Updates Will be posted shortly ")}const u=e(o,[["render",c]]);export{u as default};

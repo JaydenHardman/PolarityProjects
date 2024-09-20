@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex justify-center align-center">
-        Updates Will be posted shortly
+        Updates Will be posted shortly. Expect to see some amazing things.
     </div>
 </template>
 

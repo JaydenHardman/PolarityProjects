@@ -6,7 +6,8 @@ echo "----------------------------------------"
 
 cd ..
 npm run build
-git add dist && git commit -m 'adding dist subtree'
+git add dist -f 
+git commit -m 'Deployment to Github Pages'
 git subtree push --prefix dist origin gh-pages
 
 echo "----------------------------------------"

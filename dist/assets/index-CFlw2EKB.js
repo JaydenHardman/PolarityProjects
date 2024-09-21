@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./index-pr333K-0.js";const n={name:"index",data(){return{}},methods:{},computed:{},created(){},mounted(){}};function r(c,a,s,d,p,_){return o(),t("div",null," Polarity Projects. ")}const m=e(n,[["render",r]]);export{m as default};

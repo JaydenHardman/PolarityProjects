@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex justify-center align-center overflow-auto">
+    <div class="d-flex justify-center align-center overflow-auto mx-4">
         <div>
             <v-card class="mx-auto" color="#1F2833">
                 <v-card-text>

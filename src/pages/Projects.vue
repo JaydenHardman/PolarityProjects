@@ -3,11 +3,10 @@
         <div v-if="isProjectSelected">
             Projects
         </div>
-        <div v-if="isFirstFlightSelected">
-            First flight
-        </div>
-        <div v-if="isGaiaSelected">
-            Gaia
+        <div v-for="(item, index) in projects">
+            <div v-if="isSelectedProject(item.url)">
+                {{ item.title }}
+            </div>
         </div>
     </div>
 </template>
@@ -19,18 +18,20 @@ export default {
     name: 'Projects',
     data() {
         return {
-            // Add your component data here
             projectsService : new ProjectsService(),
-            projects: [],
+            projects: [] as any[],
         };
     },
     methods: {
-        // Add your component methods here
         getProjects() {
-            this.projectsService.getProjects()
-            .then((response) => {
-                this.projects = response.data
-            })
+            this.projects = this.projectsService.getProjects()
+            // .then((response) => {
+            //     //this.projects = response.data
+            //     this.projects = response
+            // })
+        },
+        isSelectedProject(title: string){
+            return this.$route.query.hasOwnProperty('project') && this.$route.query.project == title
         }
     },
     computed: {
@@ -48,7 +49,6 @@ export default {
         // Lifecycle hook for when the component is created
     },
     mounted() {
-        // Lifecycle hook for when the component is mounted
         this.getProjects();
     }
 };

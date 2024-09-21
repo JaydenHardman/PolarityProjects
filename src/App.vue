@@ -1,46 +1,43 @@
 <template>
-  <v-card>
-    <v-layout>
-      <v-navigation-drawer
-        theme="dark"
-        permanent
-        rail
+  <v-layout>
+    <v-navigation-drawer
+      theme="dark"
+      permanent
+      rail
+    >
+      <!-- <v-list-item
+        prepend-avatar="https://randomuser.me/api/portraits/women/75.jpg"
+      ></v-list-item>
+
+      <v-divider></v-divider> -->
+      <v-list
+        density="compact"
+        v-for="(item, index) in navItems"
+        :key="index"
+        nav
       >
-        <!-- <v-list-item
-          prepend-avatar="https://randomuser.me/api/portraits/women/75.jpg"
-        ></v-list-item>
+        <v-list-item :prepend-icon="item.icon" @click="navigateMenuItem(item.url)" :value="item" :active="isActiveRoute(item.url)">
+          <v-tooltip activator="parent" location="start">{{ item.title }}</v-tooltip>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 
-        <v-divider></v-divider> -->
-        <v-list
-          density="compact"
-          v-for="(item, index) in navItems"
-          :key="index"
-          nav
-        >
-          <v-list-item :prepend-icon="item.icon" @click="navigateMenuItem(item.url)" :value="item" :active="isActiveRoute(item.url)">
-            <v-tooltip activator="parent" location="start">{{ item.title }}</v-tooltip>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
+    <!-- Sub Menu on Projects Page -->
+    <v-navigation-drawer v-if="isProjectsPage" permanent width="150">
+      <v-list
+        density="compact"
+        v-for="(item, index) in projects"
+        :key="index"
+        nav
+      >
+        <v-list-item @click="navigateProject(item.url)" :title="item.title" :value="item" :active="isActiveProject(item.url)"/>
+      </v-list>
+    </v-navigation-drawer>
 
-      <!-- Sub Menu on Projects Page -->
-      <v-navigation-drawer v-if="isProjectsPage" permanent width="150">
-        <v-list
-          density="compact"
-          v-for="(item, index) in projects"
-          :key="index"
-          nav
-        >
-          <v-list-item @click="navigateProject(item.url)" :title="item.title" :value="item" :active="isActiveProject(item.url)">
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-
-      <v-main class="d-flex h-screen">
-        <router-view class="w-100" />
-      </v-main>
-    </v-layout>
-  </v-card>
+    <v-main class="d-flex h-screen">
+      <router-view class="w-100" />
+    </v-main>
+  </v-layout>
 </template>
 
 
@@ -58,7 +55,7 @@ export default {
       ],
       projects: [
         {title: '/First Flight', url:'FirstFlight'},
-        {title: '/Gaia', url:'Gaia'},
+        // {title: '/Gaia', url:'Gaia'},
       ],
       projectsService : new ProjectsService(),
     }
@@ -76,12 +73,12 @@ export default {
     isActiveProject(title: string): boolean{
       return this.$route.query.hasOwnProperty('project') && this.$route.query.project == title
     },
-    getProjects() {
-      this.projectsService.getProjects()
-      .then((response) => {
-        this.projects = response.data
-      })
-    }
+    // getProjects() {
+    //   this.projects = this.projectsService.getProjects()
+    //   .then((response) => {
+    //     this.projects = response.data
+    //   })
+    // }
   },
   computed: {
     isProjectsPage() {

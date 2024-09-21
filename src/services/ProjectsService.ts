@@ -4,8 +4,13 @@ export class ProjectsService {
     public async getTestData() {
         return await baseClient.get("testData");
     }
-    public async getProjects(){
-        return await baseClient.get("projects");
+    public getProjects(){
+        //return await baseClient.get("projects");
+
+        var testData = [] as any;
+        testData.push({title: '/First Flight', url:'FirstFlight'})
+        testData.push({title: '/Gaia', url:'Gaia'})
+        return testData
     }
 };
 

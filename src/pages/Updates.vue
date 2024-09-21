@@ -11,6 +11,9 @@ import UpdatePost from '@/components/UpdatePost.vue';
 import UpdatesService from '../services/UpdatesService'
 export default {
     name: 'Updates',
+    components: {
+        UpdatePost
+    },
     data() {
         return {
             // Add your component data here

@@ -3,7 +3,7 @@
         <div v-if="isProjectSelected">
             Projects
         </div>
-        <div v-for="(item, index) in projects">
+        <div v-for="item in projects">
             <div v-if="isSelectedProject(item.url)">
                 {{ item.title }}
             </div>
